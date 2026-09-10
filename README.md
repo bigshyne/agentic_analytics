@@ -3,6 +3,9 @@
 Prototypes exploring how an LLM agent should query a business's data: through a
 governed semantic layer (Sidemantic + DuckDB), never raw SQL against raw tables.
 
+See [DECISIONS.md](DECISIONS.md) for why -- DuckDB, the governance model,
+how new tables get onboarded, and where a human stays in the loop.
+
 ## sample_data/ -- Brightcart semantic layer + chat app
 
 The main project. "Brightcart" is a synthetic e-commerce/subscription business
