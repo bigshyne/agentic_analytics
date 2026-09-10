@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated data (regenerate with sample_data/generate_brightcart_fragmented.py)
+sample_data/brightcart_fragmented.duckdb
+
+# Local tool/session state -- not project source
+.claude/
+.gstack/
+sample_data/.gstack/
+sample_data/streamlit.log

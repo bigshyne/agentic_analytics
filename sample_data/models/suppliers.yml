@@ -1,0 +1,14 @@
+models:
+- name: suppliers
+  table: suppliers
+  primary_key: supplier_id
+  dimensions:
+  - name: supplier_name
+    type: categorical
+  - name: contact_email
+    type: categorical
+  - name: country
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count

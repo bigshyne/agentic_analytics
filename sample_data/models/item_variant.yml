@@ -1,0 +1,17 @@
+models:
+- name: item_variant
+  table: item_variant
+  primary_key: item_variant_id
+  relationships:
+  - name: item
+    type: many_to_one
+    foreign_key: item_id
+  dimensions:
+  - name: variant_attribute
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_price_adjustment
+    agg: sum
+    sql: price_adjustment

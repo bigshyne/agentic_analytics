@@ -1,0 +1,21 @@
+models:
+- name: shipments
+  table: shipments
+  primary_key: shipment_id
+  relationships:
+  - name: orders
+    type: many_to_one
+    foreign_key: order_id
+  - name: carriers
+    type: many_to_one
+    foreign_key: carrier_id
+  dimensions:
+  - name: shipped_date
+    type: time
+    granularity: day
+  - name: delivered_date
+    type: time
+    granularity: day
+  metrics:
+  - name: record_count
+    agg: count

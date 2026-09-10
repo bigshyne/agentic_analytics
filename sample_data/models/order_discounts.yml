@@ -1,0 +1,14 @@
+models:
+- name: order_discounts
+  table: order_discounts
+  primary_key: order_discount_id
+  relationships:
+  - name: orders
+    type: many_to_one
+    foreign_key: order_id
+  - name: discounts
+    type: many_to_one
+    foreign_key: discount_id
+  metrics:
+  - name: record_count
+    agg: count

@@ -1,0 +1,14 @@
+models:
+- name: item_identifier
+  table: item_identifier
+  primary_key: item_identifier_id
+  relationships:
+  - name: item_variant
+    type: many_to_one
+    foreign_key: item_variant_id
+  dimensions:
+  - name: identifier_type
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count

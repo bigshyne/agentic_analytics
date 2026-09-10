@@ -1,0 +1,19 @@
+models:
+- name: employees
+  table: employees
+  primary_key: employee_id
+  dimensions:
+  - name: department
+    type: categorical
+  - name: first_name
+    type: categorical
+  - name: last_name
+    type: categorical
+  - name: email
+    type: categorical
+  - name: hire_date
+    type: time
+    granularity: day
+  metrics:
+  - name: record_count
+    agg: count

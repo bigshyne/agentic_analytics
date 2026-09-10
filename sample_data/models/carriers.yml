@@ -1,0 +1,12 @@
+models:
+- name: carriers
+  table: carriers
+  primary_key: carrier_id
+  dimensions:
+  - name: carrier_name
+    type: categorical
+  - name: contact_phone
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count

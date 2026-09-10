@@ -1,0 +1,18 @@
+models:
+- name: ticket_messages
+  table: ticket_messages
+  dimensions:
+  - name: sender_type
+    type: categorical
+  - name: sent_at
+    type: time
+    granularity: day
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_message_id
+    agg: sum
+    sql: message_id
+  - name: total_ticket_id
+    agg: sum
+    sql: ticket_id

@@ -1,0 +1,25 @@
+models:
+- name: account_detail
+  table: account_detail
+  primary_key: account_detail_id
+  relationships:
+  - name: account
+    type: many_to_one
+    foreign_key: account_id
+  dimensions:
+  - name: account_type_code
+    type: categorical
+  - name: account_name
+    type: categorical
+  - name: effective_date
+    type: time
+    granularity: day
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_segment_id
+    agg: sum
+    sql: segment_id
+  - name: total_owner_employee_id
+    agg: sum
+    sql: owner_employee_id

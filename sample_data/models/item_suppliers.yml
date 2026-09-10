@@ -1,0 +1,17 @@
+models:
+- name: item_suppliers
+  table: item_suppliers
+  primary_key: item_supplier_id
+  relationships:
+  - name: item
+    type: many_to_one
+    foreign_key: item_id
+  - name: suppliers
+    type: many_to_one
+    foreign_key: supplier_id
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_cost_price
+    agg: sum
+    sql: cost_price

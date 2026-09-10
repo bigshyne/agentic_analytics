@@ -1,0 +1,24 @@
+models:
+- name: support_tickets
+  table: support_tickets
+  relationships:
+  - name: account
+    type: many_to_one
+    foreign_key: account_id
+  dimensions:
+  - name: status
+    type: categorical
+  - name: priority
+    type: categorical
+  - name: created_at
+    type: time
+    granularity: day
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_ticket_id
+    agg: sum
+    sql: ticket_id
+  - name: total_assigned_employee_id
+    agg: sum
+    sql: assigned_employee_id

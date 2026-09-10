@@ -1,0 +1,23 @@
+models:
+- name: invoices
+  table: invoices
+  primary_key: invoice_id
+  relationships:
+  - name: orders
+    type: many_to_one
+    foreign_key: order_id
+  dimensions:
+  - name: invoice_date
+    type: time
+    granularity: day
+  - name: due_date
+    type: time
+    granularity: day
+  - name: status
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_total_amount
+    agg: sum
+    sql: total_amount

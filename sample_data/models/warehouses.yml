@@ -1,0 +1,14 @@
+models:
+- name: warehouses
+  table: warehouses
+  primary_key: warehouse_id
+  dimensions:
+  - name: warehouse_name
+    type: categorical
+  - name: city
+    type: categorical
+  - name: country
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count

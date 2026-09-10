@@ -1,0 +1,12 @@
+models:
+- name: customer_segments
+  table: customer_segments
+  primary_key: segment_id
+  dimensions:
+  - name: segment_name
+    type: categorical
+  - name: description
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count

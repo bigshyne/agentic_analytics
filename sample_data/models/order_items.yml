@@ -1,0 +1,20 @@
+models:
+- name: order_items
+  table: order_items
+  primary_key: order_item_id
+  relationships:
+  - name: orders
+    type: many_to_one
+    foreign_key: order_id
+  - name: item_variant
+    type: many_to_one
+    foreign_key: item_variant_id
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_quantity
+    agg: sum
+    sql: quantity
+  - name: total_unit_price
+    agg: sum
+    sql: unit_price

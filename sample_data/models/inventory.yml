@@ -1,0 +1,20 @@
+models:
+- name: inventory
+  table: inventory
+  primary_key: inventory_id
+  relationships:
+  - name: item_variant
+    type: many_to_one
+    foreign_key: item_variant_id
+  - name: warehouses
+    type: many_to_one
+    foreign_key: warehouse_id
+  metrics:
+  - name: record_count
+    agg: count
+  - name: total_quantity_on_hand
+    agg: sum
+    sql: quantity_on_hand
+  - name: total_reorder_level
+    agg: sum
+    sql: reorder_level

@@ -1,0 +1,18 @@
+models:
+- name: party_address
+  table: party_address
+  primary_key: party_address_id
+  relationships:
+  - name: party
+    type: many_to_one
+    foreign_key: party_id
+  dimensions:
+  - name: address_type
+    type: categorical
+  - name: state
+    type: categorical
+  - name: country
+    type: categorical
+  metrics:
+  - name: record_count
+    agg: count
